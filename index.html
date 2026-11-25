@@ -90,18 +90,6 @@
     </article>
   </main>
   <footer>© 2026 Keio Property Management Platform</footer>
-  <script>
-    const buttons = document.querySelectorAll('[data-lang]');
-    const policies = document.querySelectorAll('[data-policy]');
-    buttons.forEach((button) => button.addEventListener('click', () => {
-      const lang = button.dataset.lang;
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
-      buttons.forEach((item) => item.setAttribute('aria-selected', String(item === button)));
-      policies.forEach((policy) => { policy.hidden = policy.dataset.policy !== lang; });
-      history.replaceState(null, '', `#${lang}`);
-    }));
-    const initial = location.hash.slice(1);
-    if (['ja', 'zh', 'en'].includes(initial)) document.querySelector(`[data-lang="${initial}"]`).click();
-  </script>
+  <script src="/privacy-policy/app.js" defer></script>
 </body>
 </html>
